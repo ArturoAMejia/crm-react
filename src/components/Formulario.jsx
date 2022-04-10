@@ -1,9 +1,14 @@
 import React from "react";
 import { Formik, Form, Field } from "formik";
+import { useNavigate } from "react-router-dom"
 import * as Yup from "yup";
 import Error from "./Error";
 
 const Formulario = () => {
+
+  // El hook de useNavigate funciona para redirigir a una pagina con React Router DOM
+  const navigate = useNavigate()
+
   const nuevoClienteSchema = Yup.object().shape({
     nombre: Yup.string()
       .min(3, "El nombre es muy corto")
@@ -20,8 +25,23 @@ const Formulario = () => {
     notas: "",
   });
 
-  const handleSubmit = (valores) => {
-    console.log(valores);
+  const handleSubmit = async (valores) => {
+    try {
+      const url = "http://localhost:4000/clientes";
+
+      const respuesta = await fetch(url, {
+        method:'POST',
+        body: JSON.stringify(valores),
+        headers:{
+          "Content-Type":"application/json"
+        }
+      })
+
+      const resultado = await respuesta.json()
+      navigate('/clientes')
+    } catch (error) {
+      
+    }
   };
 
   return (
@@ -38,8 +58,10 @@ const Formulario = () => {
           telefono: "",
           notas: "",
         }}
-        onSubmit={(values) => {
-          handleSubmit(values);
+        onSubmit={ async (values , {resetForm}) => {
+          await handleSubmit(values);
+
+          resetForm()
         }}
         validationSchema={nuevoClienteSchema}
       >

@@ -1,3 +1,52 @@
 {
-  "clientes":[]
+  "clientes": [
+    {
+      "nombre": "Arturo",
+      "empresa": "Freelance",
+      "email": "armejia02@gmail.com",
+      "telefono": "78853855",
+      "notas": "asdsadsa",
+      "id": 1
+    },
+    {
+      "nombre": "Fernandinho",
+      "empresa": "UNI",
+      "email": "fernandinho@correo.com",
+      "telefono": "3213",
+      "notas": "Es Gay\n",
+      "id": 2
+    },
+    {
+      "nombre": "Rodrigo Cochon",
+      "empresa": "Paputalandia",
+      "email": "papu@papu.com",
+      "telefono": "121212",
+      "notas": "Gay",
+      "id": 3
+    },
+    {
+      "nombre": "Juan",
+      "empresa": "UNI",
+      "email": "a@a.com",
+      "telefono": "232323",
+      "notas": "test",
+      "id": 4
+    },
+    {
+      "nombre": "Armando",
+      "empresa": "A",
+      "email": "a@a.com",
+      "telefono": "2222",
+      "notas": "",
+      "id": 5
+    },
+    {
+      "nombre": "pedro",
+      "empresa": "ca",
+      "email": "a@a.com",
+      "telefono": "",
+      "notas": "",
+      "id": 6
+    }
+  ]
 }

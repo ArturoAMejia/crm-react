@@ -4,6 +4,7 @@ import Layout from "./layout/Layout";
 import EditarCliente from "./pages/EditarCliente";
 import Inicio from "./pages/Inicio";
 import NuevoCliente from "./pages/NuevoCliente";
+import VerCliente from "./pages/VerCliente";
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
           <Route path="nuevo" element={<NuevoCliente />} />
           {/* Para hacer el routing dinamico se le a;ade un placeholder con :id */}
           <Route path="editar/:id" element={<EditarCliente />} />
+
+          {/* Se pone :id para hacer el routing dinamico */}
+          <Route path=":id" element={<VerCliente />} />
         </Route>
       </Routes>
     </BrowserRouter>
