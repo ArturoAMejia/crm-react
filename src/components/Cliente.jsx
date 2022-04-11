@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router";
 
-const Cliente = ({ cliente }) => {
+const Cliente = ({ cliente, handleEliminar }) => {
   const { nombre, empresa, email, telefono, notas, id } = cliente;
 
   const navigate = useNavigate();
@@ -24,19 +24,21 @@ const Cliente = ({ cliente }) => {
         <button
           className="p-3 m-2 bg-amber-400 hover:bg-amber-500 text-white rounded-md"
           type="button"
-          onClick={ () => navigate(`/clientes/${id}`)}
+          onClick={() => navigate(`/clientes/${id}`)}
         >
           Ver
         </button>
         <button
           className="px-3 m-2 bg-green-500 hover:bg-green-400 text-white rounded-md"
           type="button"
+          onClick={() => navigate(`/clientes/editar/${id}`)}
         >
           Editar
         </button>
         <button
           className="p-3 m-2 bg-red-700 hover:bg-red-600 text-white rounded-md"
           type="button"
+          onClick={() => handleEliminar(id)}
         >
           Eliminar
         </button>
